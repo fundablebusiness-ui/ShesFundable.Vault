@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get a personalized Funding Readiness Review that reveals your strengths, identifies funding gaps, and helps you understand what funding partners may see when evaluating your business.">
+    <meta name="theme-color" content="#FF0066">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="ShesFundable.Vault - Funding Readiness Review">
+    <meta property="og:description" content="Know exactly where you stand before applying for funding. Get clarity, confidence, and tools to strengthen your business.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shesfundable.vault">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Funding Readiness Review",
+      "description": "A personalized assessment service for women entrepreneurs preparing for funding.",
+      "provider": {
+        "@type": "Organization",
+        "name": "ShesFundable.Vault",
+        "url": "https://shesfundable.vault"
+      },
+      "areaServed": "US",
+      "priceRange": "$300"
+    }
+    </script>
+    
+    <title>ShesFundable.Vault - Funding Readiness Review for Women Entrepreneurs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M10 18V2M2 10l8-8 8 8"/>
+        </svg>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">ShesFundable<span class="logo-vault">.Vault</span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+                <li><a href="#what-included" class="nav-link">What's Included</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+                <li><a href="#cta-section" class="nav-link nav-cta">Get Started</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-headline">Before You Apply for Funding, Know Exactly Where You Stand</h1>
+            <p class="hero-subheadline">Get a personalized Funding Readiness Review that reveals your strengths, identifies funding gaps, improves your business credibility, and helps you understand what funding partners may see when evaluating your business.</p>
+            
+            <div class="delivery-badge">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="12 2 4 10 2 8"></polyline>
+                    <polyline points="12 2 14 4"></polyline>
+                </svg>
+                <span>Delivered Within 48 Hours</span>
+            </div>
+
+            <div class="offer-checklist">
+                <div class="checklist-item">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="17 4 9 12 3 6"></polyline>
+                    </svg>
+                    <span>Fundability Assessment</span>
+                </div>
+                <div class="checklist-item">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="17 4 9 12 3 6"></polyline>
+                    </svg>
+                    <span>Funding Readiness Score</span>
+                </div>
+                <div class="checklist-item">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="17 4 9 12 3 6"></polyline>
+                    </svg>
+                    <span>Personalized Fundability Report</span>
+                </div>
+                <div class="checklist-item">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="17 4 9 12 3 6"></polyline>
+                    </svg>
+                    <span>20-Minute Funding Readiness Consultation</span>
+                </div>
+                <div class="checklist-item">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="17 4 9 12 3 6"></polyline>
+                    </svg>
+                    <span>Funding Credibility Page</span>
+                </div>
+                <div class="checklist-item">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="17 4 9 12 3 6"></polyline>
+                    </svg>
+                    <span>ShesFundable Fundability Toolkit™</span>
+                </div>
+            </div>
+
+            <div class="pricing-card">
+                <div class="price-label">Investment</div>
+                <div class="price-amount">$300</div>
+                <button class="cta-button cta-primary" onclick="scrollTo('#payment')">GET STARTED NOW</button>
+                <p class="price-trust">One-Time Payment • No Subscription • No Hidden Fees</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Sticky CTA -->
+    <div class="mobile-sticky-cta" id="mobileStickyCtaHero">
+        <button class="cta-button cta-primary-small" onclick="scrollTo('#payment')">GET STARTED - $300</button>
+    </div>
+
+    <!-- Reality Section -->
+    <section class="reality-section">
+        <div class="container">
+            <div class="reality-content">
+                <div class="reality-text">
+                    <h2>Most Funding Applications Fail Before They Are Submitted</h2>
+                    <p>Many entrepreneurs spend weeks searching for funding opportunities without knowing whether their business is truly prepared.</p>
+                    <p><strong>They apply too early.</strong></p>
+                    <p><strong>They overlook important details.</strong></p>
+                    <p><strong>They waste valuable time pursuing opportunities that may not align with their current stage of business.</strong></p>
+                    <p>The Funding Readiness Review helps you understand where you stand before you invest time, energy, and resources pursuing funding opportunities.</p>
+                </div>
+                <div class="reality-illustration">
+                    <div class="illustration-placeholder">
+                        <svg width="100%" height="100%" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Simplified business readiness illustration -->
+                            <circle cx="150" cy="80" r="40" fill="#FF0066" opacity="0.1"/>
+                            <rect x="50" y="150" width="200" height="150" rx="10" fill="#F7F7F7" stroke="#FF0066" stroke-width="2"/>
+                            <circle cx="100" cy="190" r="15" fill="#FF0066" opacity="0.3"/>
+                            <circle cx="150" cy="210" r="15" fill="#FF0066" opacity="0.5"/>
+                            <circle cx="200" cy="190" r="15" fill="#FF0066" opacity="0.3"/>
+                            <line x1="100" y1="250" x2="200" y2="250" stroke="#FF0066" stroke-width="2"/>
+                            <text x="150" y="280" text-anchor="middle" font-family="Inter" font-size="14" fill="#000">Business Readiness</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Receive Section -->
+    <section class="what-included" id="what-included">
+        <div class="container">
+            <h2 class="section-headline">Everything Included in Your Funding Readiness Review</h2>
+            <div class="cards-grid">
+                <div class="feature-card fade-in-up">
+                    <div class="card-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#FF0066" stroke-width="2">
+                            <rect x="4" y="8" width="32" height="24" rx="2"/>
+                            <path d="M12 14h16M12 20h16M12 26h8"/>
+                        </svg>
+                    </div>
+                    <h3>Fundability Assessment</h3>
+                    <p>A detailed evaluation of key business factors commonly reviewed by lenders, investors, and funding partners. You'll gain insight into areas that may strengthen or weaken your overall funding readiness.</p>
+                </div>
+
+                <div class="feature-card fade-in-up">
+                    <div class="card-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#FF0066" stroke-width="2">
+                            <circle cx="20" cy="20" r="16"/>
+                            <path d="M20 12v16M14 20h12"/>
+                        </svg>
+                    </div>
+                    <h3>Funding Readiness Score</h3>
+                    <p>Receive a clear snapshot of your current position. Your score helps you understand where your business stands today and provides a benchmark for future growth.</p>
+                </div>
+
+                <div class="feature-card fade-in-up">
+                    <div class="card-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#FF0066" stroke-width="2">
+                            <path d="M8 12h24v18H8z"/>
+                            <path d="M12 16h4v8h-4zM20 14h4v10h-4zM28 18h4v6h-4z"/>
+                        </svg>
+                    </div>
+                    <h3>Personalized Fundability Report</h3>
+                    <p><strong>Includes:</strong> Strengths • Areas needing improvement • Funding readiness observations • Priority recommendations. No generic advice. No cookie-cutter templates. Your report is personalized to your business.</p>
+                </div>
+
+                <div class="feature-card fade-in-up">
+                    <div class="card-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#FF0066" stroke-width="2">
+                            <circle cx="20" cy="16" r="6"/>
+                            <path d="M10 28c0-4.4 4.5-8 10-8s10 3.6 10 8"/>
+                        </svg>
+                    </div>
+                    <h3>20-Minute Funding Readiness Consultation</h3>
+                    <p>Review assessment findings. Discuss funding goals. Answer questions. Identify priorities and next steps.</p>
+                </div>
+
+                <div class="feature-card fade-in-up">
+                    <div class="card-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#FF0066" stroke-width="2">
+                            <rect x="6" y="8" width="28" height="24" rx="2"/>
+                            <path d="M6 14h28M12 20h16"/>
+                        </svg>
+                    </div>
+                    <h3>Funding Credibility Page</h3>
+                    <p>A professional online business profile designed to improve visibility and credibility. Funding partners often research businesses online before making decisions.</p>
+                </div>
+
+                <div class="feature-card fade-in-up">
+                    <div class="card-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#FF0066" stroke-width="2">
+                            <rect x="6" y="8" width="28" height="24" rx="2"/>
+                            <circle cx="20" cy="20" r="4"/>
+                        </svg>
+                    </div>
+                    <h3>ShesFundable Fundability Toolkit™</h3>
+                    <p><strong>Includes:</strong> Funding Document Checklist • Business Credit Guide • Funding Preparation Worksheet • Use-of-Funds Planner • Revenue Projection Template • Cash Flow Planning Worksheet • Lender Readiness Checklist</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="section-headline">You Walk Away With Clarity</h2>
+            <div class="benefits-comparison">
+                <div class="benefits-column">
+                    <h3>Before</h3>
+                    <ul class="benefits-list before">
+                        <li><span class="icon">❓</span> Am I ready for funding?</li>
+                        <li><span class="icon">❓</span> What am I missing?</li>
+                        <li><span class="icon">❓</span> What should I fix first?</li>
+                        <li><span class="icon">❓</span> Does my business appear credible?</li>
+                    </ul>
+                </div>
+                <div class="divider"></div>
+                <div class="benefits-column">
+                    <h3>After</h3>
+                    <ul class="benefits-list after">
+                        <li><span class="icon">✓</span> Clear understanding of your position</li>
+                        <li><span class="icon">✓</span> Personalized recommendations</li>
+                        <li><span class="icon">✓</span> Confidence moving forward</li>
+                        <li><span class="icon">✓</span> Stronger business credibility</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-headline">Simple 4-Step Process</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-number">1</div>
+                    <h3>Purchase Your Funding Readiness Review</h3>
+                    <p>Secure checkout with one-time payment of $300</p>
+                </div>
+                <div class="timeline-connector"></div>
+                <div class="timeline-item">
+                    <div class="timeline-number">2</div>
+                    <h3>Complete Your Intake Form</h3>
+                    <p>Tell us about your business and funding goals</p>
+                </div>
+                <div class="timeline-connector"></div>
+                <div class="timeline-item">
+                    <div class="timeline-number">3</div>
+                    <h3>Participate in Your 20-Minute Consultation</h3>
+                    <p>Schedule and join your personalized consultation call</p>
+                </div>
+                <div class="timeline-connector"></div>
+                <div class="timeline-item">
+                    <div class="timeline-number">4</div>
+                    <h3>Receive Your Deliverables Within 48 Hours</h3>
+                    <p>Personalized Report • Readiness Score • Credibility Page • Toolkit</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who This Is For Section -->
+    <section class="who-for-section">
+        <div class="container">
+            <h2 class="section-headline">Designed for Women Entrepreneurs Who Want to Build a Stronger Business Foundation</h2>
+            <div class="who-for-checklist">
+                <div class="who-for-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF0066" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Plan to pursue funding in the future</span>
+                </div>
+                <div class="who-for-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF0066" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Want to improve business credibility</span>
+                </div>
+                <div class="who-for-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF0066" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Want to better understand funding readiness</span>
+                </div>
+                <div class="who-for-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF0066" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Want expert feedback before applying</span>
+                </div>
+                <div class="who-for-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF0066" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Want practical tools and resources to strengthen their business foundation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Section -->
+    <section class="investment-section" id="payment">
+        <div class="container">
+            <h2>Funding Readiness Review</h2>
+            <p class="investment-subtext">Includes Everything Listed Above</p>
+            <div class="investment-card">
+                <div class="investment-price">
+                    <span class="price-currency">$</span>
+                    <span class="price-number">300</span>
+                </div>
+                <ul class="investment-details">
+                    <li>One-Time Payment</li>
+                    <li>No Monthly Fees</li>
+                    <li>No Subscription</li>
+                    <li>No Hidden Costs</li>
+                </ul>
+                <button class="cta-button cta-primary-large" id="ctaButton">GET STARTED NOW</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-headline">What Women Entrepreneurs Are Saying</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in-up">
+                    <div class="star-rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">"This review was exactly what I needed. I learned so much about my business and felt confident moving forward with my funding application."</p>
+                    <p class="testimonial-author"><strong>Sarah Mitchell</strong></p>
+                    <p class="testimonial-title">Founder, Digital Marketing Agency</p>
+                </div>
+
+                <div class="testimonial-card fade-in-up">
+                    <div class="star-rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">"The personalized report identified gaps I didn't even know existed. The toolkit has been invaluable as I prepare for the next round of funding."</p>
+                    <p class="testimonial-author"><strong>Jessica Chen</strong></p>
+                    <p class="testimonial-title">CEO, Tech Startup</p>
+                </div>
+
+                <div class="testimonial-card fade-in-up">
+                    <div class="star-rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">"The consultation was so helpful. I felt heard and understood. This is a must-have for any entrepreneur serious about getting funded."</p>
+                    <p class="testimonial-author"><strong>Maria Rodriguez</strong></p>
+                    <p class="testimonial-title">Founder, Sustainable Fashion Brand</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <h2 class="section-headline">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Will this guarantee funding?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 8l4 4 4-4"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No. No legitimate provider can guarantee funding approval. This review is designed to help you better understand your current funding readiness and identify opportunities for improvement.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>How long does the process take?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 8l4 4 4-4"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>All deliverables are provided within 48 hours following your consultation.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>What is the Funding Credibility Page?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 8l4 4 4-4"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>A professionally designed online business profile (one page) that helps strengthen your visibility and credibility.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Is this only for businesses seeking loans?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 8l4 4 4-4"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No. The review is valuable for entrepreneurs seeking various forms of capital and those wanting to strengthen their overall business foundation.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Is this a one-time payment?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 8l4 4 4-4"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. The Funding Readiness Review is a one-time investment of $300.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Can I get a refund?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 8l4 4 4-4"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>All sales are final. Because this package includes a personal 1:1 consultation and custom digital deliverables built specifically for your business, we do not offer refunds.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta-section" id="cta-section">
+        <div class="container">
+            <h2>Stop Guessing. Start Preparing.</h2>
+            <p class="final-cta-copy">Discover where you stand today and gain the clarity, confidence, and tools to strengthen your business for future funding opportunities.</p>
+            <p class="final-cta-offer">Get Your Funding Readiness Review Today For Just <strong>$300</strong>.</p>
+            <button class="cta-button cta-final" onclick="scrollTo('#payment')">GET STARTED NOW</button>
+            <div class="trust-indicators">
+                <div class="trust-item">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 8h-3V5a3 3 0 0 0-6 0v3H4m0 0v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"/>
+                    </svg>
+                    <span>Secure Checkout</span>
+                </div>
+                <div class="trust-item">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 1v18M4 8l4 4 8-8"/>
+                    </svg>
+                    <span>One-Time Payment</span>
+                </div>
+                <div class="trust-item">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="10" cy="10" r="9"/>
+                        <path d="M6 10l2 2 4-4"/>
+                    </svg>
+                    <span>Delivered Within 48 Hours</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ShesFundable.Vault</h3>
+                    <p>Helping women entrepreneurs build stronger, more fundable businesses through education, readiness assessments, and strategic guidance.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms & Conditions</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><a href="mailto:fundablebusiness@gmail.com">fundablebusiness@gmail.com</a></p>
+                    <p><strong>Business Hours:</strong><br>Monday-Friday<br>9:00 AM-5:00 PM EST</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="disclaimer">
+                    <p>ShesFundable does not provide legal, tax, accounting, or financial advice. The Funding Readiness Review is an educational and informational service designed to help entrepreneurs better understand their business readiness for funding opportunities. Funding approval is determined solely by individual lenders, investors, grantors, and funding partners. No funding approval is guaranteed.</p>
+                </div>
+                <div class="copyright">
+                    <p>© 2026 ShesFundable.Vault. All Rights Reserved. | Fund Her & Change the World™</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
