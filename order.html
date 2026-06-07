@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complete Your Order — Funding Readiness Snapshot™</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #FF0066; --pink-light: #FF3385; --pink-pale: #fff0f5;
+    --black: #000; --white: #fff; --gray: #F7F7F7; --gray-mid: #e8e8e8; --text-muted: #666;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--gray); color: var(--black); }
+
+  /* NAV */
+  nav {
+    background: var(--black); padding: 0 5%; height: 64px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.2rem; color: var(--white); text-decoration: none; }
+  .nav-logo span { color: var(--pink); }
+  .secure-badge { font-size: 0.8rem; color: rgba(255,255,255,0.6); display: flex; align-items: center; gap: 0.4rem; }
+
+  /* HEADER */
+  .order-header {
+    background: var(--black); color: var(--white);
+    text-align: center; padding: 3rem 5% 2.5rem;
+    border-bottom: 3px solid var(--pink);
+  }
+  .order-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.5rem); font-weight: 900; margin-bottom: 0.5rem;
+  }
+  .order-header h1 em { color: var(--pink); font-style: normal; }
+  .order-header p { font-size: 0.95rem; color: rgba(255,255,255,0.7); }
+
+  /* LAYOUT */
+  .order-layout {
+    max-width: 1080px; margin: 2.5rem auto; padding: 0 5%;
+    display: grid; grid-template-columns: 1fr 420px; gap: 2rem; align-items: start;
+  }
+
+  /* FORM CARD */
+  .form-card {
+    background: var(--white); border-radius: 14px; padding: 2rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  }
+  .form-card h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--gray-mid); }
+
+  .form-section { margin-bottom: 1.75rem; }
+  .form-section-title {
+    font-size: 0.8rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--pink); margin-bottom: 1rem;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+  .form-group:last-child { margin-bottom: 0; }
+  label { font-size: 0.85rem; font-weight: 600; color: var(--black); }
+  label span { color: var(--pink); }
+  input, select {
+    padding: 0.7rem 0.9rem; border: 1.5px solid var(--gray-mid); border-radius: 8px;
+    font-size: 0.9rem; font-family: 'DM Sans', sans-serif; color: var(--black);
+    transition: border-color .2s;
+    width: 100%;
+  }
+  input:focus, select:focus { outline: none; border-color: var(--pink); }
+  input::placeholder { color: #bbb; }
+
+  /* PAYMENT METHOD */
+  .payment-methods { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.25rem; }
+  .payment-option {
+    border: 2px solid var(--gray-mid); border-radius: 8px;
+    padding: 0.75rem 1rem; cursor: pointer; text-align: center;
+    transition: all .2s; font-size: 0.9rem; font-weight: 600;
+    display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+  }
+  .payment-option.active { border-color: var(--pink); background: var(--pink-pale); }
+  .payment-option:hover { border-color: var(--pink); }
+  .cc-icon { font-size: 1.2rem; }
+
+  /* PAYPAL SECTION */
+  .paypal-section { text-align: center; padding: 1.5rem 1rem; background: var(--gray); border-radius: 10px; }
+  .paypal-section p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.25rem; line-height: 1.5; }
+  .paypal-btn {
+    display: inline-block; background: #FFC439; color: #003087;
+    font-weight: 700; font-size: 1rem; padding: 0.85rem 2.5rem;
+    border-radius: 8px; border: none; cursor: pointer;
+    text-decoration: none; transition: all .2s; width: 100%;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .paypal-btn:hover { background: #f0b429; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+  .paypal-logo { font-size: 1.1rem; font-weight: 900; }
+  .paypal-logo .pp-blue { color: #003087; }
+  .paypal-logo .pp-light { color: #009cde; }
+
+  /* DIVIDER */
+  .or-divider { display: flex; align-items: center; gap: 1rem; margin: 1.5rem 0; }
+  .or-divider::before, .or-divider::after { content: ''; flex: 1; height: 1px; background: var(--gray-mid); }
+  .or-divider span { font-size: 0.8rem; color: var(--text-muted); font-weight: 600; white-space: nowrap; }
+
+  /* CREDIT CARD FORM */
+  #cc-form { display: none; }
+  #cc-form.active { display: block; }
+
+  .card-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+
+  /* SUBMIT */
+  .submit-btn {
+    width: 100%; padding: 1.1rem;
+    background: var(--pink); color: var(--white);
+    font-size: 1.05rem; font-weight: 700; font-family: 'DM Sans', sans-serif;
+    border: none; border-radius: 10px; cursor: pointer;
+    transition: all .2s; margin-top: 0.5rem;
+  }
+  .submit-btn:hover { background: var(--pink-light); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(255,0,102,0.3); }
+
+  .security-note {
+    display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+    font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; text-align: center;
+  }
+
+  .legal-checks { display: flex; flex-direction: column; gap: 0.6rem; margin: 1.25rem 0; }
+  .legal-check { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
+  .legal-check input[type="checkbox"] { width: auto; min-width: 16px; margin-top: 2px; accent-color: var(--pink); }
+  .legal-check a { color: var(--pink); text-decoration: none; }
+  .legal-check a:hover { text-decoration: underline; }
+
+  /* ORDER SUMMARY */
+  .order-summary {
+    background: var(--white); border-radius: 14px; padding: 1.75rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08); position: sticky; top: 24px;
+  }
+  .summary-title { font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--gray-mid); }
+  .summary-product {
+    background: var(--black); color: var(--white); border-radius: 10px;
+    padding: 1rem 1.25rem; margin-bottom: 1.25rem; text-align: center;
+  }
+  .summary-product-name {
+    font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700;
+    color: var(--white); margin-bottom: 0.25rem;
+  }
+  .summary-product-name em { color: var(--pink); font-style: normal; }
+  .summary-product-tagline { font-size: 0.8rem; color: rgba(255,255,255,0.6); }
+
+  .summary-items { margin-bottom: 1.25rem; }
+  .summary-item {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding: 0.55rem 0; border-bottom: 1px solid var(--gray); font-size: 0.85rem;
+  }
+  .summary-item-name { color: var(--text-muted); flex: 1; padding-right: 0.5rem; }
+  .summary-item-value { color: var(--text-muted); font-weight: 600; text-decoration: line-through; white-space: nowrap; }
+  .summary-total {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 0 0; border-top: 2px solid var(--black); margin-top: 0.25rem;
+  }
+  .summary-total-label { font-weight: 700; font-size: 0.95rem; }
+  .summary-total-value { color: var(--text-muted); font-size: 0.9rem; text-decoration: line-through; }
+
+  .summary-price-block {
+    background: var(--pink-pale); border-radius: 10px; padding: 1.25rem;
+    text-align: center; margin-top: 1.25rem;
+  }
+  .you-save { font-size: 0.8rem; font-weight: 700; color: var(--pink); margin-bottom: 0.25rem; }
+  .today-price { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900; color: var(--pink); line-height: 1; }
+  .today-price-label { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem; }
+
+  .summary-features { list-style: none; margin-top: 1.25rem; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+  .summary-features li { font-size: 0.83rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem; }
+  .summary-features li::before { content: '✓'; color: var(--pink); font-weight: 700; }
+
+  .guarantee-box {
+    background: rgba(255,0,102,0.06); border: 1px solid rgba(255,0,102,0.2);
+    border-radius: 10px; padding: 1rem; margin-top: 1.25rem; text-align: center;
+    font-size: 0.82rem; color: var(--text-muted); line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .order-layout { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .card-row { grid-template-columns: 1fr 1fr; }
+    .payment-methods { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="shesfundable-300-offer.html" class="nav-logo">Shes<span>Fundable</span>.Ready</a>
+  <div class="secure-badge">🔒 Secure Checkout</div>
+</nav>
+
+<div class="order-header">
+  <h1>Complete Your Order</h1>
+  <p>Secure your <em>Funding Readiness Snapshot™</em> and get instant access within 48 hours.</p>
+</div>
+
+<div class="order-layout">
+
+  <!-- FORM -->
+  <div class="form-card">
+
+    <!-- CONTACT INFO -->
+    <div class="form-section">
+      <div class="form-section-title">Contact Information</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name <span>*</span></label>
+          <input type="text" placeholder="First Name" id="firstName">
+        </div>
+        <div class="form-group">
+          <label>Last Name <span>*</span></label>
+          <input type="text" placeholder="Last Name" id="lastName">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email Address <span>*</span></label>
+        <input type="email" placeholder="your@email.com" id="email">
+      </div>
+      <div class="form-group">
+        <label>Phone Number <span style="color:var(--text-muted); font-weight:400;">(Optional)</span></label>
+        <input type="tel" placeholder="(000) 000-0000" id="phone">
+      </div>
+    </div>
+
+    <!-- BUSINESS INFO -->
+    <div class="form-section">
+      <div class="form-section-title">Business Information</div>
+      <div class="form-group">
+        <label>Business Name <span>*</span></label>
+        <input type="text" placeholder="Your Business Name" id="bizName">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Type of Business <span>*</span></label>
+          <select id="bizType">
+            <option value="">Select Business Type</option>
+            <option>Sole Proprietorship</option>
+            <option>LLC</option>
+            <option>S-Corporation</option>
+            <option>C-Corporation</option>
+            <option>Partnership</option>
+            <option>Nonprofit</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Years in Business <span>*</span></label>
+          <select id="bizAge">
+            <option value="">Select</option>
+            <option>Less than 1 year</option>
+            <option>1–2 years</option>
+            <option>2–5 years</option>
+            <option>5–10 years</option>
+            <option>10+ years</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAYMENT METHOD -->
+    <div class="form-section">
+      <div class="form-section-title">Payment Method</div>
+      <div class="payment-methods">
+        <div class="payment-option active" onclick="selectPayment('paypal', this)">
+          <span>PayPal</span>
+        </div>
+        <div class="payment-option" onclick="selectPayment('cc', this)">
+          <span class="cc-icon">💳</span> <span>Credit Card</span>
+        </div>
+      </div>
+
+      <!-- PAYPAL -->
+      <div id="paypal-section">
+        <div class="paypal-section">
+          <p>You'll be redirected to PayPal to complete your secure payment of <strong>$300.00</strong>. No PayPal account required — pay with any debit or credit card.</p>
+          <form id="paypal-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="business" value="fundablebusiness@gmail.com">
+            <input type="hidden" name="item_name" value="Funding Readiness Snapshot™">
+            <input type="hidden" name="item_number" value="FRS-300">
+            <input type="hidden" name="amount" value="300.00">
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="hidden" name="return" value="thankyou.html">
+            <input type="hidden" name="cancel_return" value="order.html">
+            <input type="hidden" name="no_shipping" value="1">
+            <input type="hidden" name="no_note" value="1">
+            <button type="submit" class="paypal-btn" onclick="return validatePayPal()">
+              Pay with <span class="paypal-logo"><span class="pp-blue">Pay</span><span class="pp-light">Pal</span></span> — $300
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- CREDIT CARD -->
+      <div id="cc-form">
+        <div class="form-group">
+          <label>Cardholder Name <span>*</span></label>
+          <input type="text" placeholder="Name on card" id="cardName">
+        </div>
+        <div class="form-group">
+          <label>Card Number <span>*</span></label>
+          <input type="text" placeholder="1234 5678 9012 3456" id="cardNumber" maxlength="19" oninput="formatCard(this)">
+        </div>
+        <div class="card-row">
+          <div class="form-group">
+            <label>Expiry <span>*</span></label>
+            <input type="text" placeholder="MM/YY" id="expiry" maxlength="5" oninput="formatExpiry(this)">
+          </div>
+          <div class="form-group">
+            <label>CVV <span>*</span></label>
+            <input type="text" placeholder="CVV" id="cvv" maxlength="4">
+          </div>
+          <div class="form-group">
+            <label>ZIP Code <span>*</span></label>
+            <input type="text" placeholder="ZIP" id="zip" maxlength="10">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Billing Address <span>*</span></label>
+          <input type="text" placeholder="Street address" id="billing">
+        </div>
+      </div>
+
+      <div class="legal-checks">
+        <div class="legal-check">
+          <input type="checkbox" id="agreeTerms">
+          <label for="agreeTerms">I agree to the <a href="legal.html#terms" target="_blank">Terms &amp; Conditions</a></label>
+        </div>
+        <div class="legal-check">
+          <input type="checkbox" id="agreePrivacy">
+          <label for="agreePrivacy">I agree to the <a href="legal.html#privacy" target="_blank">Privacy Policy</a></label>
+        </div>
+        <div class="legal-check">
+          <input type="checkbox" id="agreeRefund">
+          <label for="agreeRefund">I understand all sales are final. No refunds once work has commenced.</label>
+        </div>
+      </div>
+
+      <div id="cc-submit" style="display:none;">
+        <button class="submit-btn" onclick="submitOrder()">Complete Purchase — $300</button>
+      </div>
+
+      <div class="security-note">🔒 256-bit SSL Encrypted · Payments processed securely · Your information is protected
+      </div>
+    </div>
+  </div>
+
+  <!-- ORDER SUMMARY -->
+  <div class="order-summary">
+    <div class="summary-title">Order Summary</div>
+
+    <div class="summary-product">
+      <div class="summary-product-name">Funding Readiness <em>Snapshot™</em></div>
+      <div class="summary-product-tagline">Complete digital package · Delivered within 48 hours</div>
+    </div>
+
+    <div class="summary-items">
+      <div class="summary-item"><span class="summary-item-name">Fundability Assessment</span><span class="summary-item-value">Included</span></div>
+      <div class="summary-item"><span class="summary-item-name">Funding Readiness Score</span><span class="summary-item-value">$150</span></div>
+      <div class="summary-item"><span class="summary-item-name">Personalized Fundability Report</span><span class="summary-item-value">$250</span></div>
+      <div class="summary-item"><span class="summary-item-name">Funding Match Report</span><span class="summary-item-value">$297</span></div>
+      <div class="summary-item"><span class="summary-item-name">20-Min 1:1 Consultation</span><span class="summary-item-value">$150</span></div>
+      <div class="summary-item"><span class="summary-item-name">Hidden Credit Union Network</span><span class="summary-item-value">$97</span></div>
+      <div class="summary-item"><span class="summary-item-name">$8.5B Funding Source Database</span><span class="summary-item-value">$297</span></div>
+      <div class="summary-item"><span class="summary-item-name">Fundability Toolkit™</span><span class="summary-item-value">$197</span></div>
+    </div>
+
+    <div class="summary-total">
+      <span class="summary-total-label">Total Value</span>
+      <span class="summary-total-value">$1,438</span>
+    </div>
+
+    <div class="summary-price-block">
+      <div class="you-save">YOU SAVE $1,138 TODAY</div>
+      <div class="today-price">$300</div>
+      <div class="today-price-label">One-Time Payment · No Monthly Fees</div>
+    </div>
+
+    <ul class="summary-features">
+      <li>Delivered within 48 hours</li>
+      <li>Personalized to your business</li>
+      <li>Includes 1:1 consultation</li>
+      <li>Instant digital access</li>
+      <li>No subscriptions or hidden fees</li>
+    </ul>
+
+    <div class="guarantee-box">
+      🔒 <strong>Secure Checkout</strong><br>
+      Your payment is encrypted and processed securely. All sales are final per our <a href="legal.html#terms" target="_blank" style="color:var(--pink);">Terms &amp; Conditions</a>.
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function selectPayment(type, el) {
+    document.querySelectorAll('.payment-option').forEach(o => o.classList.remove('active'));
+    el.classList.add('active');
+    if (type === 'paypal') {
+      document.getElementById('paypal-section').style.display = 'block';
+      document.getElementById('cc-form').classList.remove('active');
+      document.getElementById('cc-submit').style.display = 'none';
+    } else {
+      document.getElementById('paypal-section').style.display = 'none';
+      document.getElementById('cc-form').classList.add('active');
+      document.getElementById('cc-submit').style.display = 'block';
+    }
+  }
+
+  function validatePayPal() {
+    const first = document.getElementById('firstName').value.trim();
+    const last = document.getElementById('lastName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const biz = document.getElementById('bizName').value.trim();
+    const terms = document.getElementById('agreeTerms').checked;
+    const privacy = document.getElementById('agreePrivacy').checked;
+    const refund = document.getElementById('agreeRefund').checked;
+    if (!first || !last || !email || !biz) { alert('Please fill in all required fields.'); return false; }
+    if (!terms || !privacy || !refund) { alert('Please agree to the Terms, Privacy Policy, and Refund Policy to continue.'); return false; }
+    // Inject buyer info into PayPal form
+    const form = document.getElementById('paypal-form');
+    const customInput = document.createElement('input');
+    customInput.type = 'hidden';
+    customInput.name = 'custom';
+    customInput.value = JSON.stringify({ name: first + ' ' + last, email, business: biz });
+    form.appendChild(customInput);
+    return true;
+  }
+
+  function submitOrder() {
+    const terms = document.getElementById('agreeTerms').checked;
+    const privacy = document.getElementById('agreePrivacy').checked;
+    const refund = document.getElementById('agreeRefund').checked;
+    if (!terms || !privacy || !refund) { alert('Please agree to the Terms, Privacy Policy, and Refund Policy.'); return; }
+    // Credit card processing — integrate PayPal Advanced/PPCP here for card payments without leaving the page
+    alert('Credit card processing will be integrated with PayPal. Redirecting...');
+    window.location.href = 'thankyou.html';
+  }
+
+  function formatCard(el) {
+    let val = el.value.replace(/\D/g, '').substring(0, 16);
+    el.value = val.replace(/(.{4})/g, '$1 ').trim();
+  }
+
+  function formatExpiry(el) {
+    let val = el.value.replace(/\D/g, '').substring(0, 4);
+    if (val.length >= 2) val = val.substring(0, 2) + '/' + val.substring(2);
+    el.value = val;
+  }
+</script>
+</body>
+</html>
